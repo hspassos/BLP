@@ -1,0 +1,347 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt]{article}
+\usepackage[latin9]{inputenc}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=1.5cm,rmargin=1.5cm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{setspace}
+\usepackage[authoryear]{natbib}
+\usepackage{natbib}
+\setstretch{1.5}
+\usepackage[unicode=true]
+ {hyperref}
+\usepackage{breakurl}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{amsfonts}
+\usepackage{mathcomp}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage[section]{placeins}
+\usepackage{rotating}
+\usepackage{soul}
+\usepackage{xspace}
+\usepackage[multiple,bottom]{footmisc}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+%\usepackage[unicode=true,citebordercolor=white, urlbordercolor=white, linktocpage]{hyperref}
+
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\fancyhead{}% Clear all headers
+%\fancyfoot{}% Clear all footers
+\fancyfoot[C]{Ec2610 \hfill \thepage \hfill Problem Set I}% 
+\renewcommand{\headrulewidth}{0pt}% Remove header rule
+\renewcommand{\footrulewidth}{1pt}% Remove footer rule
+\pagestyle{fancy}% Set page style to "fancy"
+%\cfoot{\thepage}
+
+\DeclareMathOperator*{\plim}{plim}
+\newcommand{\iid}{\stackrel{\mathrm{iid}}{\sim}}
+
+\makeatother
+
+\begin{document}
+
+\title{Ec2610 (IO) \textendash{} Problem Set I\\
+Differentiated Product Demand}
+
+\author{Ariel Pakes, Robin Lee, TF David Hao Zhang \thanks{\texttt{dhzhang@g.harvard.edu}}\\
+Due: October 10, 2018}
+\maketitle
+
+\section*{Preliminaries}
+
+This problem set consists of one empirical exercise. You are going
+to estimate different models of differentiated product demand on market
+level data.
+
+The due date for submission of this problem set is as indicated above.
+All submissions need to be in electronic form in a zip file on Canvas, and include both your
+documented (!) programming code and your answers to the questions
+in the problem set. When you are asked for results, please present
+them in separate and clearly marked tables in your write-up. Please
+package your code in a single folder with a single file that I can
+run (ie. there should be a master file that calls other programs which I can run to get all the results). Code should be written in Matlab, Python, R, or Julia, although Matlab is recommended unless you strongly prefer the other languages.
+
+I would also like you to place your code in the appendix of your
+problem set\footnote{You can use the package \href{http://www.mathworks.com/matlabcentral/fileexchange/8015-m-code-latex-package}{mcode};
+include, on separate lines in your preamble, the options ``\textbackslash{}usepackage{[}numbered,framed{]}\{mcode\}''
+and ``\textbackslash{}lstset\{breaklines=true\}''. Use, e.g., ``\textbackslash{}lstinputlisting\{zhang\_ps1.m\}''
+to automatically insert your code.} as well as include the actual program files in your submission. The
+filename of your write-up needs to be ``PS{[}\#{]}\_{[}last name{]}\_{[}first
+name{]}.pdf''. 
+
+On non-programming questions, please answer them
+in such a way that an intelligent research assistant who knows Matlab
+could implement your suggestion, without being unnecessarily verbose.
+
+There are several bonus questions on this problem set. One of them
+asks you to use your estimates to evaluate the effects of a hypothetical
+merger. The others are typically a high-level review or critical assessment
+of some of the theoretical issues in demand estimation. View them
+as entirely optional, a complimentary learning opportunity.
+
+Please submit your problem set write-up and code in a zip file on Canvas (preferred). 
+
+Collaboration is encouraged. However, every student must
+submit their own write-up and code, with write-up and code written independently. In addition, if you work in a group I would like you
+to indicate your group members.
+
+The problem set largely derives from previous problem sets by Daniel
+Pollmann, Tom Wollmann, Michael Sinkinson, and Ashvin Gandhi.
+
+\section{Background on demand estimation}
+
+\citet{BLP_1995} (``BLP'') has become very influential in demand
+estimation. I suggest you have a look at Aviv Nevo's ``Practitioner\textquoteright s
+Guide to Estimation of Random-Coefficients Logit Models of Demand''
+\citep{Nevo_2000}, which provides some context in its introduction
+and discusses many issues related to the estimation of differentiated
+product demand; the \href{http://faculty.wcas.northwestern.edu/~ane686/supplements/Ras_guide_appendix.pdf}{appendix}
+goes over some of the practical aspects (slightly dated, but useful).
+An excellent overview is also presented in the first part of the Handbook
+of Econometrics chapter on market outcomes \citep{ABBP_2007}.
+
+\citeauthor{Nevo_2000} describes random-coefficient discrete-choice
+models of demand as follows: ``The new method maintains the advantage
+of the logit model in handling a large number of products. It is superior
+to prior methods because (1) the model can be estimated using only
+market-level price and quantity data, (2) it deals with the endogeneity
+of prices, and (3) it produces demand elasticities that are more realistic\textemdash for
+example, cross-price elasticities are larger for products that are
+closer together in terms of their characteristics.''
+
+When I was first presented with this material, I found it hard it
+to put the different papers that followed into context, so I will
+try to do my best to summarize a subset of them in one paragraph here.
+\citet{BLP_1999} apply a demand model to the evaluation of trade
+policy using a more advanced approximation to the optimal instruments
+than the original BLP paper.\footnote{To approximate the optimal instruments, they use the implicit function
+theorem to replace $\mathbb{E}\left[\frac{\partial\xi_{j}}{\partial\theta}\vert Z_{j}\right]$
+by $\frac{\partial\xi_{j}}{\partial\theta}\vert Z_{j}$ evaluated
+at $\mathbb{E}\left(\xi_{j}\right)=0$. The original BLP paper instead
+used only the first-order basis functions of the optimal instruments
+under symmetric NE (the different sums of characteristics) as an approximation.
+See also \citet{RV_2012} for discussion and a two-step approach to
+the implementation of optimal instruments.} \citet{BLP_2004} (``Micro BLP'') incorporate marketing survey
+data and match additional ``micro'' moments given by the covariance
+of observed consumer attributes and product characteristics and the
+covariance of first- and second-choice characteristics. \citet{Petrin_2002}
+analyzes the welfare effect of the introduction of the minivan and
+adds as micro information the average characteristics of buyers (income,
+family size, age) from the automobile supplement of the Consumer Expenditure
+Survey. \citet{BLintonP_2004} provide limit theory for estimators
+in BLP-type models as the number of products grows large, while there
+are more recent papers that instead consider the many-markets setting
+\citep{Freyberger_2012,GLS_2012}. \citet{BGH_2012} prove that given
+very primitive conditions,\footnote{The main condition, which they term ``connected substitutes'', requires,
+roughly speaking, that the set of products cannot be split into subsets
+such that any two products from different subsets exhibit no substitutability.} the inversion $\xi=s^{-1}\left(\mathfrak{s}\right)$ (the contraction
+mapping in BLP; differenced log shares in pure logit) is a one-to-one
+mapping, generalizing the result in \citet{Berry_1994} that under
+mild assumptions on the joint individual error distribution, there
+exists a one-to-one mapping between the observed market share vector
+$\mathfrak{s}$ and the vector of mean utilities $\delta$. \citet{BH_2010}
+apply this condition to the identification of demand using only ``macro'',
+i.e., market share, data.
+
+The original BLP paper proposed a nested fixed-point (NFP) approach,
+which has become the standard in empirical implementations. At every
+value of the parameter vector $\theta$, the market shares are inverted
+using a contraction mapping to obtain a vector holding the mean utility
+level for each product. Recently, \citet{DFS_2012} proposed an approach
+based on MPEC (``Mathematical Programming with Equilibrium Constraints''),
+suggesting to rewrite the problem as a constrained optimization problem,
+for which researchers have developed very efficient methods. MPEC
+can be much faster than NFP methods because the equilibrium constraints
+only need to hold at the optimum, while NFP methods impose them at
+every value of the parameter vector that the optimization algorithm
+searches over. We will use the traditional NFP method here, but feel
+free to implement MPEC as an additional exercise, and let us know
+about your experience with it.
+
+\section{Estimation exercise}
+
+\subsection{Setting}
+
+A number of national producers sell substitute products in regional
+markets. The government intends to bail out a struggling firm and
+and allow it to merge with one of its healthy competitors. What do
+you expect the welfare consequences to be?
+
+\subsection{Data description}
+
+For the empirical exercise, we are giving you data on $T=10$ markets.
+In these markets, 11 different firms sell a total of $J=247$ products.
+All of the products are unique, so none of them are offered in multiple
+markets. The dataset is simulated, but you can still think of a product
+as a passenger vehicle with a set of characteristics if you like,
+although the units do not have an interpretation.
+
+The dataset contains the following pieces of data, where products
+are ordered by market (1-10):
+\begin{itemize}
+\item ``prodsMarket'': $T$-vector of the number of products in each market
+\item ``share'': $J$-vector of market shares
+\item ``f'': $J$-vector denoting the firm that sells the product
+\item ``ch'': $J\times4$-matrix of constant and three product characteristics
+\item ``pr'': $J$-vector of prices
+\item ``costShifters'': $J\times2$-matrix of cost shifters
+\end{itemize}
+
+\subsection{Basic summary statistics}
+\begin{enumerate}
+\item Prepare a table with the following pieces of information for each
+market: How many firms are active? How many products do they market
+in total? What fraction of agents bought one of the goods in the sample
+period?
+\item Prepare a table with summary statistics for market share, characteristics,
+price, and cost shifters. Please include mean, median, minimum, maximum,
+and standard deviation. You can inspect these statistics separately
+for each market, but in what you report, you may pool all markets.
+\end{enumerate}
+
+\subsection{Pure logit model}
+\begin{enumerate}
+\item Suppose agents have the following utility function, where $i$ denotes
+the agent, and $j$ denotes the product:
+\[
+u_{ij}=\underbrace{\delta_{j}}_{x_{j}^{\prime}\beta-\alpha p_{j}+\xi_{j}}+\epsilon_{ij},
+\]
+where $\epsilon_{ij}$ is an iid error following a standard Type-I
+Extreme Value distribution with $F\left(\epsilon\right)=e^{-e^{-\epsilon}}$
+(``logit'' errors). Suppose further that the firms know $\xi$ when
+setting prices but did not know$\xi$ when setting characteristics.
+
+\begin{enumerate}
+\item What statistical assumptions can you make based on this? Which of
+your conditions, based on data provided to you, identify the parameter
+vector of interest, $\theta=\left(\alpha,\beta\right)$? In other
+words, what are valid (and relevant) instruments? Is the model over-identified?
+\item Show how you can invert market shares to obtain the mean utility level
+$\delta_{j}$ for each product.
+\item Estimate $\theta=\left(\alpha,\beta\right)$ and provide standard
+errors for your estimate. You can try different combinations of instruments,
+but please use all the different types of instruments that are included
+or can be constructed from the data (i.e., ``BLP instruments'').
+\end{enumerate}
+\item Estimate and present the matrix of cross- and own-price elasticities
+for market 10 based on your model and parameter estimates.\footnote{The symmetry of the matrix of share derivatives with respect to price
+(though not of elasticities) may have reminded you of the symmetry
+of the Slutsky matrix of the derivative of uncompensated demand with
+respect to price \citep[ Proposition 3.G.2]{MWG_1995}. \citet[p.\ 67]{APT_1992}
+(available on \href{http://ezp-prod1.hul.harvard.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=11339&site=ehost-live&scope=site}{Hollis})
+show that it also holds in discrete choice settings with constant
+marginal utility of income in the region of interest, e.g., with quasilinear
+utility. \citet{GP_2004} take advantage of symmetry to identify a
+cross-price derivative which would not be identified otherwise due
+to lack of variation in one of the prices.}
+\item In the next question, we are going to free up the substitution pattern
+by introducing random coefficients as in BLP. Alternatively, we could
+think about implementing nested logit, the pure characteristics model,
+or multinomial probit. Would they be appealing in this setting? Why
+or why not?
+\end{enumerate}
+
+\subsection{Random-coefficient logit model}
+\begin{enumerate}
+\item Suppose agents have the following utility function, where $i$ denotes
+the agent, and $j$ denotes the product:
+\[
+u_{ij}=\underbrace{\delta_{j}}_{x_{j}^{\prime}\beta-\alpha p_{j}+\xi_{j}}+\sum_{k\in\left\{ 1,2\right\} }\sigma_{k}\nu_{i,k}x_{j,k}-\sigma_{p}\nu_{i,p}p_{j}+\epsilon_{ij},
+\]
+where $\epsilon_{ij}$ is an iid error following a standard Type-I
+Extreme Value distribution, and $\nu_{i,\cdot}\overset{iid}{\sim}\mathcal{N}\left(0,1\right)$
+is an iid standard normal error. To summarize: the model is as before,
+but with random coefficients on the constant, the first characteristic,
+and price. The orthogonality/exogeneity assumptions remain the same
+as before.
+
+\begin{enumerate}
+\item What is the contraction mapping used here for the inner loop? Is there
+a way to reduce the computational burden from the contraction mapping?
+(Hint: take a look at page 4 of the appendix to \citet{Nevo_2000}.)
+In the following, make sure to set the ``inner tolerance'' level
+for the contraction mapping very tight, in your final run ideally
+on the order of $10^{-14}$.
+\item Write the parameter vector of interest as $\theta=\left(\theta_{1},\theta_{2}\right)$,
+where $\theta_{1}$ are the ``linear'' parameters, and $\theta_{2}$
+are the ``nonlinear'' parameters. Which parameters are in $\theta_{1}$
+and which are in $\theta_{2}$? What does this imply for estimation?
+\item \textit{Bonus question}: Explain how the variance terms $\sigma$
+are identified from variation in the choice set and prices.
+\item Estimate the model using 2-step optimal GMM. In addition to your point
+estimates, please provide standard errors. (Hint: take a look at page
+6 of the appendix to \citet{Nevo_2000} for analytic standard errors,
+and/or use finite differences for a numerical approximation.) If you
+try different starting values, do your estimates change?
+\item Provide an explicit expression for the variance-covariance matrix
+of your estimates, and discuss how simulation error affects it.
+\end{enumerate}
+\item Compare the cross- and own-price elasticities for market 10 for the
+RC logit and pure logit model.
+\item We are assuming here that demand in all markets is identical. With
+data on the distribution of income within each market, how could you
+let the distribution of $\alpha_{i}$ (the random variable coefficient
+on price) vary systematically across markets?
+\item Let's assume, only for this question, that you had ``micro moments''
+as in \citet{BLP_2004}: the covariance of consumer attributes and
+product characteristics as well as the covariance between first- and
+second-choice characteristics. How could you integrate them into your
+estimation procedure to improve the precision of your estimates? Which
+of the coefficients would each of the different sets of moments be
+particularly useful in ``pinning down''?
+\item Suppose in addition that each product has the following marginal cost
+structure:
+\[
+mc_{j}=\begin{bmatrix}x_{j} & cs_{j}\end{bmatrix}^{\prime}\gamma+\omega_{j},
+\]
+where $cs$ is the $J\times2$ matrix of cost shifters.
+
+\begin{enumerate}
+\item Explain how you can estimate $\gamma$ based on your estimates for
+the demand side and different assumptions on the supply side (product-level
+profit maximization, firm-level profit maximization, collusion to
+maximize total profit). How could you obtain valid standard errors?
+\item Can you also estimate the demand side and supply side jointly? How
+would you do so? What are the ``linear'' and ``nonlinear'' parameters
+now? Can joint estimation improve the precision of your estimates
+for the demand side parameters? Please explain how. Is there a caveat?
+\item Estimate the demand side and supply side parameters jointly under
+the assumption that firms maximize total firm profits. You don't need
+to provide standard errors. (Hint: since we have two sets of moment
+conditions, we can use multiple-equation GMM for the linear parameters.\footnote{See, e.g., Eric Zivot's \href{http://faculty.washington.edu/ezivot/econ583/multiequationgmmslides.pdf}{notes}
+on multiple-equation linear GMM \textendash{} notice that he flips
+the notation for $X$ and $Z$ relative to their typical use.})
+\item \textit{Bonus question}: suppose you had to select among the different
+pricing assumptions; how could you do so? Hint: have a look at \citet{Nevo_2001}. 
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Counterfactual (bonus exercise)}
+
+Firms 1 and 10 have announced their intention to merge.\footnote{Mergers will be discussed in lecture later on in the course.}
+As the regulator in market 9, you are concerned that this will lead
+to an increase in prices and a decrease in product variety. Are these
+concerns justified? Please explain carefully and show your estimates.
+What concerns do you have about this counterfactual?
+
+\section{Feedback}
+
+Which parts of the problem set did you find more interesting or useful,
+and which less? Suppose you were the TF, and you had to give this
+problem set again next year. Which additional exercises or questions
+would you pose to students (or which would you scrap), and what would
+you add to the empirical model to make it more realistic or interesting?
+Can you think of other interesting counterfactuals?
+
+\bibliographystyle{jpe}
+\bibliography{psrefs}
+
+\end{document}
