@@ -1,6 +1,7 @@
 import scipy.io
 import numpy as np
 import pandas as pd
+import scipy.stats as stats
 import pyblp
 
 # Carregar o arquivo .mat
@@ -63,7 +64,15 @@ prodsMarket['share_firm_11'] = data[data['firm'] == 11].groupby('market')['share
 
 
 
-display(prodsMarket)
+statistics = pd.DataFrame({
+    'mean': data.iloc[:, 2:].mean(),
+    'median': data.iloc[:, 2:].median(),
+    'minimum': data.iloc[:, 2:].min(),
+    'maximum': data.iloc[:, 2:].max(),
+    'standard deviation': data.iloc[:, 2:].std()
+}).T
+
+display(statistics)
 
 print(data[data['market'] == 3]['share'].sum())
 
