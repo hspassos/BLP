@@ -13,10 +13,10 @@ prodsMarket['prodsMarket'] = mat_data['prodsMarket'].flatten()
 
 # Criar tabela com os dados por produto
 data = pd.DataFrame({
-    'market': np.repeat(np.arange(len(prodsMarket)), prodsMarket['prodsMarket']),
-    'firm': mat_data['f'].flatten(),
-    'share': mat_data['share'].flatten(),
-    'price': mat_data['pr'].flatten(),
+    'market_ids': np.repeat(np.arange(len(prodsMarket)), prodsMarket['prodsMarket']),
+    'firm_ids': mat_data['f'].flatten(),
+    'shares': mat_data['share'].flatten(),
+    'prices': mat_data['pr'].flatten(),
     'char1': mat_data['ch'][:, 0],
     'char2': mat_data['ch'][:, 1],
     'char3': mat_data['ch'][:, 2],
@@ -27,40 +27,40 @@ data = pd.DataFrame({
 
 
 # Tabela com os dados para cada mercado
-prodsMarket['activefirms'] = data.groupby('market')['firm'].nunique()
+prodsMarket['activefirms'] = data.groupby('market_ids')['firm_ids'].nunique()
 
-prodsMarket['firm_1'] = data[data['firm'] == 1].groupby('market')['firm'].count()
-prodsMarket['share_firm_1'] = data[data['firm'] == 1].groupby('market')['share'].sum()
+prodsMarket['firm_1'] = data[data['firm_ids'] == 1].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_1'] = data[data['firm_ids'] == 1].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_2'] = data[data['firm'] == 2].groupby('market')['firm'].count()
-prodsMarket['share_firm_2'] = data[data['firm'] == 2].groupby('market')['share'].sum()
+prodsMarket['firm_2'] = data[data['firm_ids'] == 2].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_2'] = data[data['firm_ids'] == 2].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_3'] = data[data['firm'] == 3].groupby('market')['firm'].count()
-prodsMarket['share_firm_3'] = data[data['firm'] == 3].groupby('market')['share'].sum()
+prodsMarket['firm_3'] = data[data['firm_ids'] == 3].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_3'] = data[data['firm_ids'] == 3].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_4'] = data[data['firm'] == 4].groupby('market')['firm'].count()
-prodsMarket['share_firm_4'] = data[data['firm'] == 4].groupby('market')['share'].sum()
+prodsMarket['firm_4'] = data[data['firm_ids'] == 4].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_4'] = data[data['firm_ids'] == 4].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_5'] = data[data['firm'] == 5].groupby('market')['firm'].count()
-prodsMarket['share_firm_5'] = data[data['firm'] == 5].groupby('market')['share'].sum()
+prodsMarket['firm_5'] = data[data['firm_ids'] == 5].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_5'] = data[data['firm_ids'] == 5].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_6'] = data[data['firm'] == 6].groupby('market')['firm'].count()
-prodsMarket['share_firm_6'] = data[data['firm'] == 6].groupby('market')['share'].sum()
+prodsMarket['firm_6'] = data[data['firm_ids'] == 6].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_6'] = data[data['firm_ids'] == 6].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_7'] = data[data['firm'] == 7].groupby('market')['firm'].count()
-prodsMarket['share_firm_7'] = data[data['firm'] == 7].groupby('market')['share'].sum()
+prodsMarket['firm_7'] = data[data['firm_ids'] == 7].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_7'] = data[data['firm_ids'] == 7].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_8'] = data[data['firm'] == 8].groupby('market')['firm'].count()
-prodsMarket['share_firm_8'] = data[data['firm'] == 8].groupby('market')['share'].sum()
+prodsMarket['firm_8'] = data[data['firm_ids'] == 8].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_8'] = data[data['firm_ids'] == 8].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_9'] = data[data['firm'] == 9].groupby('market')['firm'].count()
-prodsMarket['share_firm_9'] = data[data['firm'] == 9].groupby('market')['share'].sum()
+prodsMarket['firm_9'] = data[data['firm_ids'] == 9].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_9'] = data[data['firm_ids'] == 9].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_10'] = data[data['firm'] == 10].groupby('market')['firm'].count()
-prodsMarket['share_firm_10'] = data[data['firm'] == 10].groupby('market')['share'].sum()
+prodsMarket['firm_10'] = data[data['firm_ids'] == 10].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_10'] = data[data['firm_ids'] == 10].groupby('market_ids')['shares'].sum()
 
-prodsMarket['firm_11'] = data[data['firm'] == 11].groupby('market')['firm'].count()
-prodsMarket['share_firm_11'] = data[data['firm'] == 11].groupby('market')['share'].sum()
+prodsMarket['firm_11'] = data[data['firm_ids'] == 11].groupby('market_ids')['firm_ids'].count()
+prodsMarket['share_firm_11'] = data[data['firm_ids'] == 11].groupby('market_ids')['shares'].sum()
 
 
 
@@ -72,21 +72,27 @@ statistics = pd.DataFrame({
     'standard deviation': data.iloc[:, 2:].std()
 }).T
 
-display(statistics)
+market_0 = pd.DataFrame(data[data['market_ids'] == 0])
+market_1 = pd.DataFrame(data[data['market_ids'] == 1])
 
-print(data[data['market'] == 3]['share'].sum())
+data['market_ids'] = data['market_ids'].astype(str)
 
-market_1 = pd.DataFrame(data[data['market'] == 0])
+# Especificar o modelo BLP
+x1_formulation = pyblp.Formulation(
+    '1 + prices + char1 + char2 + char3 + char4',  # Características e preço
+)
 
-print(market_1[market_1['firm'] == 1]['share'].sum())
-
-display(market_1)
-
-
+x2_formulation = pyblp.Formulation(
+    '1 + prices + costsh1 + costsh2',  # Custos marginais
+)
 
 
+problem = pyblp.Problem([x1_formulation, x2_formulation], data)
 
+results = problem.solve()
 
+delta = results.delta
+print(delta)
 
 
 
