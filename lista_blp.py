@@ -17,10 +17,10 @@ data = pd.DataFrame({
     'firm_ids': mat_data['f'].flatten(),
     'shares': mat_data['share'].flatten(),
     'prices': mat_data['pr'].flatten(),
-    'char1': mat_data['ch'][:, 0],
-    'char2': mat_data['ch'][:, 1],
-    'char3': mat_data['ch'][:, 2],
-    'char4': mat_data['ch'][:, 3],
+    'const': mat_data['ch'][:, 0],
+    'char1': mat_data['ch'][:, 1],
+    'char2': mat_data['ch'][:, 2],
+    'char3': mat_data['ch'][:, 3],
     'costsh1': mat_data['costShifters'][:, 0],
     'costsh2': mat_data['costShifters'][:, 1],
 })
@@ -75,11 +75,29 @@ statistics = pd.DataFrame({
 market_0 = pd.DataFrame(data[data['market_ids'] == 0])
 market_1 = pd.DataFrame(data[data['market_ids'] == 1])
 
-data['market_ids'] = data['market_ids'].astype(str)
+formulation = pyblp.Formulation('0 + prices + char1 + char2 + char3')
+local_instruments = pyblp.build_differentiation_instruments(
+formulation,
+data
+)
+local_instruments
+
+quadratic_instruments = pyblp.build_differentiation_instruments(
+formulation,
+data,
+version='quadratic'
+)
+quadratic_instruments
+
+for i, column in enumerate(local_instruments.T):
+    data[f'demand_instruments{i}'] = column
+data
+
+##########################
 
 # Especificar o modelo BLP
 x1_formulation = pyblp.Formulation(
-    '1 + prices + char1 + char2 + char3 + char4',  # Características e preço
+    '1 + prices + char1 + char2 + char3',  # Características e preço
 )
 
 x2_formulation = pyblp.Formulation(
