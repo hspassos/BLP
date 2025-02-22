@@ -7510,12 +7510,23 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Henrique de Souza Passos</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [452]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">magic</span><span class="p">(</span><span class="s1">'reset -sf'</span><span class="p">)</span>
@@ -7531,13 +7542,9 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[187], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">run_line_magic</span>(magic_name, parameter_s)
-
-<span class="ansi-red-fg">NameError</span>: name 'run_line_magic' is not defined</pre>
+<pre>/tmp/ipykernel_548659/3674724974.py:1: DeprecationWarning: `magic(...)` is deprecated since IPython 0.13 (warning added in 8.1), use run_line_magic(magic_name, parameter_s).
+  get_ipython().magic('reset -sf')
+</pre>
 </div>
 </div>
 </div>
@@ -7547,7 +7554,7 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [453]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">get_ipython</span>
@@ -7556,6 +7563,9 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pyblp</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+<span class="kn">from</span> <span class="nn">linearmodels.iv</span> <span class="kn">import</span> <span class="n">IV2SLS</span>
 </pre></div>
 </div>
 </div>
@@ -7579,6 +7589,7 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>No curto prazo isso pode evitar um aumento de preços devido a injeção de liquidez que o governo poderia fazer. No entanto, no longo prazo, poderia haver maior concentração de mercado aumentando os preços para os consumidores.</strong></p>
 </div>
 </div>
 </div>
@@ -7614,12 +7625,12 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [454]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">mat_data</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="s2">"/home/hspassos/mestrado/industrial/demand_data.mat"</span><span class="p">)</span>
@@ -7642,43 +7653,197 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
     <span class="s1">'costsh2'</span><span class="p">:</span> <span class="n">mat_data</span><span class="p">[</span><span class="s1">'costShifters'</span><span class="p">][:,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="p">})</span>
 
-
-<span class="c1"># Tabela com os dados para cada mercado</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'activefirms'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_3'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_3'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_4'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_4'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_6'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_6'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_7'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_7'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_8'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_8'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_9'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_9'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_10'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_10'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'firm_11'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">prodsMarket</span><span class="p">[</span><span class="s1">'share_firm_11'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">data</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[454]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>market_ids</th>
+<th>firm_ids</th>
+<th>shares</th>
+<th>prices</th>
+<th>const</th>
+<th>char1</th>
+<th>char2</th>
+<th>char3</th>
+<th>costsh1</th>
+<th>costsh2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>1</td>
+<td>0.002115</td>
+<td>4.775915</td>
+<td>1.0</td>
+<td>2.750983</td>
+<td>0.672526</td>
+<td>2.139236</td>
+<td>0.158296</td>
+<td>0.264869</td>
+</tr>
+<tr>
+<th>1</th>
+<td>1</td>
+<td>9</td>
+<td>0.032741</td>
+<td>3.388449</td>
+<td>1.0</td>
+<td>1.022277</td>
+<td>2.476778</td>
+<td>2.685004</td>
+<td>0.479222</td>
+<td>0.151009</td>
+</tr>
+<tr>
+<th>2</th>
+<td>1</td>
+<td>9</td>
+<td>0.009585</td>
+<td>4.085734</td>
+<td>1.0</td>
+<td>2.667053</td>
+<td>0.760962</td>
+<td>1.980984</td>
+<td>0.276290</td>
+<td>0.002862</td>
+</tr>
+<tr>
+<th>3</th>
+<td>1</td>
+<td>7</td>
+<td>0.024101</td>
+<td>2.432229</td>
+<td>1.0</td>
+<td>1.068635</td>
+<td>0.910503</td>
+<td>0.036386</td>
+<td>0.109393</td>
+<td>0.108614</td>
+</tr>
+<tr>
+<th>4</th>
+<td>1</td>
+<td>2</td>
+<td>0.012206</td>
+<td>4.486977</td>
+<td>1.0</td>
+<td>2.138262</td>
+<td>1.871875</td>
+<td>3.655649</td>
+<td>0.064100</td>
+<td>0.468338</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>242</th>
+<td>10</td>
+<td>2</td>
+<td>0.006462</td>
+<td>4.524368</td>
+<td>1.0</td>
+<td>3.006674</td>
+<td>0.118876</td>
+<td>1.877790</td>
+<td>0.480930</td>
+<td>0.039359</td>
+</tr>
+<tr>
+<th>243</th>
+<td>10</td>
+<td>10</td>
+<td>0.002214</td>
+<td>4.118809</td>
+<td>1.0</td>
+<td>1.125124</td>
+<td>1.748192</td>
+<td>1.067760</td>
+<td>0.483401</td>
+<td>0.003548</td>
+</tr>
+<tr>
+<th>244</th>
+<td>10</td>
+<td>3</td>
+<td>0.103526</td>
+<td>2.840987</td>
+<td>1.0</td>
+<td>2.284540</td>
+<td>0.467589</td>
+<td>1.036729</td>
+<td>0.018995</td>
+<td>0.136472</td>
+</tr>
+<tr>
+<th>245</th>
+<td>10</td>
+<td>11</td>
+<td>0.003856</td>
+<td>4.967610</td>
+<td>1.0</td>
+<td>2.869888</td>
+<td>0.569319</td>
+<td>2.678046</td>
+<td>0.252503</td>
+<td>0.184921</td>
+</tr>
+<tr>
+<th>246</th>
+<td>10</td>
+<td>3</td>
+<td>0.002055</td>
+<td>3.674037</td>
+<td>1.0</td>
+<td>0.933852</td>
+<td>1.152601</td>
+<td>0.341722</td>
+<td>0.326308</td>
+<td>0.474412</td>
+</tr>
+</tbody>
+</table>
+<p>247 rows × 10 columns</p>
+</div>
 </div>
 </div>
 </div>
@@ -7701,7 +7866,7 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [455]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">statistics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -7723,7 +7888,7 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[153]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[455]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7830,17 +7995,14 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Como $\xi$ só é observado depois de definir os preços, $\xi$ é endógeno em relação ao preço mas não em relação às características dos produtos. Como existe exogeneidade, um modelo OLS seria viesado, por isso é preciso usar instrumentos para estimar o preço.</strong></p>
 </div>
 </div>
 </div>
@@ -7855,16 +8017,186 @@ Cell <span class="ansi-green-fg">In[187], line 1</span>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [456]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_s0</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'shares'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">s0</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="s1">'shares'</span><span class="p">])</span>
+    <span class="p">[[</span><span class="s1">'market_ids'</span><span class="p">,</span> <span class="s1">'s0'</span><span class="p">]]</span>
+<span class="p">)</span>
+
+
+<span class="n">data_delta</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_s0</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'market_ids'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">delta</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">'shares'</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">'s0'</span><span class="p">]))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>1.c. Estimate $\theta = (\alpha; \beta)$ and provide standard errors for your estimate. You can try different combinations of instruments, but please use all the different types of instruments that are included or can be constructed from the data (i.e., "BLP instruments").</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [192]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [457]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">logit_formulation</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Formulation</span><span class="p">(</span><span class="s1">'prices + char1 + char2 + char3 + costsh1 + costsh2 + C(firm_ids)'</span><span class="p">,</span> <span class="n">absorb</span><span class="o">=</span><span class="s1">'C(market_ids)'</span><span class="p">)</span>
-<span class="n">problem</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">logit_formulation</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">data_delta</span><span class="p">[</span><span class="s2">"log_shares"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data_delta</span><span class="p">[</span><span class="s2">"shares"</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data_delta</span><span class="p">[</span><span class="s2">"s0"</span><span class="p">])</span>
+<span class="n">data_delta</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_delta</span><span class="p">[</span><span class="s1">'firm_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span>
+<span class="n">data_delta</span><span class="p">[</span><span class="s1">'market_ids'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_delta</span><span class="p">[</span><span class="s1">'market_ids'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span>
+<span class="n">data_delta</span><span class="p">[</span><span class="s1">'char_sum'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_delta</span><span class="p">[[</span><span class="s1">'char1'</span><span class="p">,</span> <span class="s1">'char2'</span><span class="p">,</span> <span class="s1">'char3'</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">market_sums</span> <span class="o">=</span> <span class="n">data_delta</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'char_sum'</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">'sum'</span><span class="p">)</span>
+<span class="n">data_delta</span><span class="p">[</span><span class="s1">'blp_iv'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">market_sums</span> <span class="o">-</span> <span class="n">data_delta</span><span class="p">[</span><span class="s1">'char_sum'</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">data_delta</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'char_sum'</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">'count'</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">firm_sums</span> <span class="o">=</span> <span class="n">data_delta</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'firm_ids'</span><span class="p">)[</span><span class="s1">'prices'</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">'sum'</span><span class="p">)</span>
+<span class="n">data_delta</span><span class="p">[</span><span class="s1">'hausman_iv'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">firm_sums</span> <span class="o">-</span> <span class="n">data_delta</span><span class="p">[</span><span class="s1">'prices'</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">data_delta</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'market_ids'</span><span class="p">)[</span><span class="s1">'prices'</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">'count'</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">formula</span> <span class="o">=</span> <span class="s2">"log_shares ~ char1 + char2 + char3 + [prices ~ blp_iv + costsh1 + costsh2 + hausman_iv]"</span>
+
+<span class="c1"># Estimar o modelo IV-2SLS (IV-Logit)</span>
+<span class="n">logit</span> <span class="o">=</span> <span class="n">IV2SLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data_delta</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s2">"robust"</span><span class="p">)</span>
+
+<span class="c1"># Exibir os resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">logit</span><span class="o">.</span><span class="n">first_stage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>    First Stage Estimation Results    
+======================================
+                                prices
+--------------------------------------
+R-squared                       0.9796
+Partial R-squared               0.1166
+Shea's R-squared                0.1166
+Partial F-statistic             33.078
+P-value (Partial F-stat)     1.151e-06
+Partial F-stat Distn           chi2(4)
+========================== ===========
+char1                           1.0791
+                              (8.4259)
+char2                           0.8022
+                              (5.7481)
+char3                          -0.0259
+                             (-0.2977)
+blp_iv                          0.0575
+                              (0.8559)
+costsh1                         1.0038
+                              (4.3869)
+costsh2                         0.6137
+                              (2.4982)
+hausman_iv                      0.0235
+                              (1.3949)
+--------------------------------------
+
+T-stats reported in parentheses
+T-stats use same covariance type as original model
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/tmp/ipykernel_548659/327344337.py:5: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  market_sums = data_delta.groupby('market_ids')['char_sum'].transform('sum')
+/tmp/ipykernel_548659/327344337.py:6: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  data_delta['blp_iv'] = (market_sums - data_delta['char_sum']) / (data_delta.groupby('market_ids')['char_sum'].transform('count') - 1)
+/tmp/ipykernel_548659/327344337.py:7: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  firm_sums = data_delta.groupby('firm_ids')['prices'].transform('sum')
+/tmp/ipykernel_548659/327344337.py:8: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  data_delta['hausman_iv'] = (firm_sums - data_delta['prices']) / (data_delta.groupby('market_ids')['prices'].transform('count') - 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [458]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">logit</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>                          IV-2SLS Estimation Summary                          
+==============================================================================
+Dep. Variable:             log_shares   R-squared:                      0.9868
+Estimator:                    IV-2SLS   Adj. R-squared:                 0.9866
+No. Observations:                 247   F-statistic:                 1.685e+04
+Date:                Sat, Feb 22 2025   P-value (F-stat)                0.0000
+Time:                        19:29:01   Distribution:                  chi2(4)
+Cov. Estimator:                robust                                         
+                                                                              
+                             Parameter Estimates                              
+==============================================================================
+            Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------
+char1          1.4340     0.2149     6.6718     0.0000      1.0128      1.8553
+char2          1.0847     0.1800     6.0273     0.0000      0.7320      1.4374
+char3          0.3763     0.0525     7.1737     0.0000      0.2735      0.4791
+prices        -2.2472     0.1511    -14.875     0.0000     -2.5433     -1.9511
+==============================================================================
+
+Endogenous: prices
+Instruments: blp_iv, costsh1, costsh2, hausman_iv
+Robust Covariance (Heteroskedastic)
+Debiased: False
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#usando o pyblp</span>
+
+<span class="n">logit_formulation</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Formulation</span><span class="p">(</span><span class="s1">'prices + blp_iv + hausman_iv + costsh1 + costsh2'</span><span class="p">,</span> <span class="n">absorb</span><span class="o">=</span><span class="s1">'C(market_ids)'</span><span class="p">)</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">logit_formulation</span><span class="p">,</span> <span class="n">data_delta</span><span class="p">)</span>
 
 <span class="n">logit_results</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 </pre></div>
@@ -7887,15 +8219,15 @@ Dimensions:
 ===============================
  T    N    F    K1    MD    ED 
 ---  ---  ---  ----  ----  ----
-10   247  11    16    15    1  
+10   247  11    5     4     1  
 ===============================
 
 Formulations:
-=================================================================================================================================================================================================================================================================================================================
-     Column Indices:          0       1      2      3       4        5               6                      7                      8                      9                     10                     11                     12                     13                      14                      15          
---------------------------  ------  -----  -----  -----  -------  -------  ---------------------  ---------------------  ---------------------  ---------------------  ---------------------  ---------------------  ---------------------  ---------------------  ----------------------  ----------------------
-X1: Linear Characteristics  prices  char1  char2  char3  costsh1  costsh2  firm_ids[np.uint8(2)]  firm_ids[np.uint8(3)]  firm_ids[np.uint8(4)]  firm_ids[np.uint8(5)]  firm_ids[np.uint8(6)]  firm_ids[np.uint8(7)]  firm_ids[np.uint8(8)]  firm_ids[np.uint8(9)]  firm_ids[np.uint8(10)]  firm_ids[np.uint8(11)]
-=================================================================================================================================================================================================================================================================================================================
+========================================================================
+     Column Indices:          0       1         2          3        4   
+--------------------------  ------  ------  ----------  -------  -------
+X1: Linear Characteristics  prices  blp_iv  hausman_iv  costsh1  costsh2
+========================================================================
 Solving the problem ...
 Updating the weighting matrix ...
 Computed results after 00:00:00.
@@ -7905,7 +8237,7 @@ Problem Results Summary:
 GMM        Objective        Clipped    Weighting Matrix  
 Step         Value          Shares     Condition Number  
 ----  --------------------  -------  --------------------
- 1    +1.0951096955240E-26     0     +1.7387277607381E+02
+ 1    +6.3923106496717E-29     0     +6.9542689411171E+01
 =========================================================
 
 Estimating standard errors ...
@@ -7916,7 +8248,7 @@ Problem Results Summary:
 GMM        Objective        Clipped    Weighting Matrix     Covariance Matrix  
 Step         Value          Shares     Condition Number      Condition Number  
 ----  --------------------  -------  --------------------  --------------------
- 2    +2.7769407121352E-26     0     +2.4224785108894E+02  +7.7928401989716E+16
+ 2    +3.9990103661963E-29     0     +6.4100425113730E+01  +1.3703000719903E+17
 ===============================================================================
 
 Cumulative Statistics:
@@ -7928,160 +8260,20 @@ Computation   Objective
 ========================
 
 Beta Estimates (Robust SEs in Parentheses):
-==============================================================================================================================================================================================================================================================================================================================================================================================
-        prices                  char1                   char2                   char3                  costsh1                 costsh2          firm_ids[np.uint8(2)]   firm_ids[np.uint8(3)]   firm_ids[np.uint8(4)]   firm_ids[np.uint8(5)]   firm_ids[np.uint8(6)]   firm_ids[np.uint8(7)]   firm_ids[np.uint8(8)]   firm_ids[np.uint8(9)]   firm_ids[np.uint8(10)]  firm_ids[np.uint8(11)]
-----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------
- -1.2479830071103E+00    +2.7829868857563E-01    +1.8753169998531E-01    +4.7618969362802E-01    -1.3269551444571E+00    -6.5187062016662E-01    -1.2138746961755E-01    -2.4188935443371E-01    +3.0243089533459E-01    +7.0512285613487E-02    -1.3026250542821E-01    -9.3790824144818E-02    +8.7293662465305E-02    -1.3177221005717E-01    +1.7131995656189E-01    +2.5503496907294E-01 
-(+1.6905702228264E-01)  (+1.5848470353047E-01)  (+1.8126157694780E-01)  (+1.5154046143186E-01)  (+3.0412877817265E-01)  (+3.5774784361237E-01)  (+2.0689397249280E-01)  (+2.4386802446940E-01)  (+2.6181054348567E-01)  (+2.1435015420149E-01)  (+2.3248348672127E-01)  (+2.6285485267494E-01)  (+2.3681141232752E-01)  (+2.2832361886021E-01)  (+2.4534462277539E-01)  (+2.2394652937484E-01)
-==============================================================================================================================================================================================================================================================================================================================================================================================
+======================================================================================================================
+        prices                  blp_iv                hausman_iv               costsh1                 costsh2        
+----------------------  ----------------------  ----------------------  ----------------------  ----------------------
+ -1.8674218370110E-01    -4.5342786153905E-01    -7.5194045607994E-02    -2.4337402093752E+00    -1.4264892232218E+00 
+(+1.5953975300724E-01)  (+1.2184238598572E-01)  (+1.2722296852473E-01)  (+6.3526567371086E-01)  (+6.6413984761463E-01)
+======================================================================================================================
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>The model may be under-identified. The total number of unfixed parameters is 16, which is more than the total number of moments, 15. Consider checking whether instruments were properly specified when initializing the problem, and whether parameters were properly configured when solving the problem.
+<pre>The model may be under-identified. The total number of unfixed parameters is 5, which is more than the total number of moments, 4. Consider checking whether instruments were properly specified when initializing the problem, and whether parameters were properly configured when solving the problem.
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>1.c. Estimate $\theta = (\alpha; \beta)$ and provide standard errors for your estimate. You can try different combinations of instruments, but please use all the different types of instruments that are included or can be constructed from the data (i.e., "BLP instruments").</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [155]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">'delta'</span><span class="p">]</span> <span class="o">=</span> <span class="n">logit_results</span><span class="o">.</span><span class="n">compute_delta</span><span class="p">()</span>
-<span class="n">theta_est</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">logit_results</span><span class="o">.</span><span class="n">beta</span><span class="p">)</span>
-<span class="n">theta_est</span>
-<span class="c1">#sigma_est = logit_results.sigma</span>
-<span class="c1">#standard_errors = logit_results.compute_standard_errors()</span>
-
-<span class="c1">#cov_matrix = logit_results.covariance</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Computing delta ...
-Finished after 00:00:00.
-
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[155]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>0.199197</td>
-</tr>
-<tr>
-<th>1</th>
-<td>-1.284435</td>
-</tr>
-<tr>
-<th>2</th>
-<td>0.314267</td>
-</tr>
-<tr>
-<th>3</th>
-<td>0.208999</td>
-</tr>
-<tr>
-<th>4</th>
-<td>0.451388</td>
-</tr>
-<tr>
-<th>5</th>
-<td>-1.373190</td>
-</tr>
-<tr>
-<th>6</th>
-<td>-0.797063</td>
-</tr>
-<tr>
-<th>7</th>
-<td>-0.102925</td>
-</tr>
-<tr>
-<th>8</th>
-<td>-0.334973</td>
-</tr>
-<tr>
-<th>9</th>
-<td>-0.063727</td>
-</tr>
-<tr>
-<th>10</th>
-<td>-0.367889</td>
-</tr>
-<tr>
-<th>11</th>
-<td>0.127423</td>
-</tr>
-<tr>
-<th>12</th>
-<td>-0.208616</td>
-</tr>
-<tr>
-<th>13</th>
-<td>-0.116476</td>
-</tr>
-<tr>
-<th>14</th>
-<td>-0.182189</td>
-</tr>
-<tr>
-<th>15</th>
-<td>0.087163</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -8104,7 +8296,7 @@ Finished after 00:00:00.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [156]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [460]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">elasticities</span> <span class="o">=</span> <span class="n">logit_results</span><span class="o">.</span><span class="n">compute_elasticities</span><span class="p">()</span>
@@ -8128,30 +8320,30 @@ Finished after 00:00:00.
 Finished after 00:00:00.
 
           0         1         2         3         4         5         6   \
-0  -3.791656  0.591234  0.076763  0.038112  0.245743  0.209206  0.037551   
-1   0.065788 -3.422239  0.076763  0.038112  0.245743  0.209206  0.037551   
-2   0.065788  0.591234 -5.220499  0.038112  0.245743  0.209206  0.037551   
-3   0.065788  0.591234  0.076763 -3.584304  0.245743  0.209206  0.037551   
-4   0.065788  0.591234  0.076763  0.038112 -4.433488  0.209206  0.037551   
-5   0.065788  0.591234  0.076763  0.038112  0.245743 -3.041279  0.037551   
-6   0.065788  0.591234  0.076763  0.038112  0.245743  0.209206 -5.773704   
-7   0.065788  0.591234  0.076763  0.038112  0.245743  0.209206  0.037551   
-8   0.065788  0.591234  0.076763  0.038112  0.245743  0.209206  0.037551   
-9   0.065788  0.591234  0.076763  0.038112  0.245743  0.209206  0.037551   
-10  0.065788  0.591234  0.076763  0.038112  0.245743  0.209206  0.037551   
+0  -0.551264  0.085959  0.011161  0.005541  0.035728  0.030416  0.005459   
+1   0.009565 -0.497555  0.011161  0.005541  0.035728  0.030416  0.005459   
+2   0.009565  0.085959 -0.759001  0.005541  0.035728  0.030416  0.005459   
+3   0.009565  0.085959  0.011161 -0.521117  0.035728  0.030416  0.005459   
+4   0.009565  0.085959  0.011161  0.005541 -0.644579  0.030416  0.005459   
+5   0.009565  0.085959  0.011161  0.005541  0.035728 -0.442167  0.005459   
+6   0.009565  0.085959  0.011161  0.005541  0.035728  0.030416 -0.839431   
+7   0.009565  0.085959  0.011161  0.005541  0.035728  0.030416  0.005459   
+8   0.009565  0.085959  0.011161  0.005541  0.035728  0.030416  0.005459   
+9   0.009565  0.085959  0.011161  0.005541  0.035728  0.030416  0.005459   
+10  0.009565  0.085959  0.011161  0.005541  0.035728  0.030416  0.005459   
 
           7         8         9         10  
-0   0.011711  0.377774  0.024602  0.009697  
-1   0.011711  0.377774  0.024602  0.009697  
-2   0.011711  0.377774  0.024602  0.009697  
-3   0.011711  0.377774  0.024602  0.009697  
-4   0.011711  0.377774  0.024602  0.009697  
-5   0.011711  0.377774  0.024602  0.009697  
-6   0.011711  0.377774  0.024602  0.009697  
-7  -5.278629  0.377774  0.024602  0.009697  
-8   0.011711 -3.271287  0.024602  0.009697  
-9   0.011711  0.377774 -6.355967  0.009697  
-10  0.011711  0.377774  0.024602 -4.709363  
+0   0.001703  0.054924  0.003577  0.001410  
+1   0.001703  0.054924  0.003577  0.001410  
+2   0.001703  0.054924  0.003577  0.001410  
+3   0.001703  0.054924  0.003577  0.001410  
+4   0.001703  0.054924  0.003577  0.001410  
+5   0.001703  0.054924  0.003577  0.001410  
+6   0.001703  0.054924  0.003577  0.001410  
+7  -0.767453  0.054924  0.003577  0.001410  
+8   0.001703 -0.475608  0.003577  0.001410  
+9   0.001703  0.054924 -0.924085  0.001410  
+10  0.001703  0.054924  0.003577 -0.684688  
 </pre>
 </div>
 </div>
@@ -8177,7 +8369,7 @@ Finished after 00:00:00.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Para usar o modelo de características puras seria necessário ter os dados da demanda que não estão disponíveis.</p>
+<p><strong>Para usar o modelo de características puras seria necessário ter os dados da demanda que não estão disponíveis. O modelo Pure Logit supõe Independência de Alternativas Irrelevantes (IIA), o que significa que as elasticidades de preço cruzado são proporcionais às participações de mercado, o que pode ser irreal em muitos mercados. O BLP propõe heterogeneidade do consumidor ao permitir coeficientes aleatórios em preço e características, levando a padrões de substituição mais flexíveis.</strong></p>
 </div>
 </div>
 </div>
@@ -8213,11 +8405,11 @@ $$\delta_j^{t+1}= \delta_j^t + ln(s_j^{obs}) - ln(s_j(\delta^t,\theta))$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [246]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">X1_formulation</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Formulation</span><span class="p">(</span><span class="s1">'1 + prices + char1 + char2 + char3 + costsh1 + costsh2'</span><span class="p">,</span> <span class="n">absorb</span><span class="o">=</span><span class="s1">'C(market_ids)'</span><span class="p">)</span>
-<span class="n">X2_formulation</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Formulation</span><span class="p">(</span><span class="s1">'1 + prices + char1 + char2 + char3 + costsh1 + costsh2'</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">X1_formulation</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Formulation</span><span class="p">(</span><span class="s1">'prices + char1 + char2 + char3 + costsh1 + costsh2'</span><span class="p">,</span> <span class="n">absorb</span><span class="o">=</span><span class="s1">'C(market_ids)'</span><span class="p">)</span>
+<span class="n">X2_formulation</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Formulation</span><span class="p">(</span><span class="s1">'prices + char1 + char2 + char3 + costsh1 + costsh2'</span><span class="p">)</span>
 <span class="n">product_formulations</span> <span class="o">=</span> <span class="p">(</span><span class="n">X1_formulation</span><span class="p">,</span> <span class="n">X2_formulation</span><span class="p">)</span>
 
 <span class="n">mc_integration</span> <span class="o">=</span> <span class="n">pyblp</span><span class="o">.</span><span class="n">Integration</span><span class="p">(</span><span class="s1">'monte_carlo'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">247</span><span class="p">,</span> <span class="n">specification_options</span><span class="o">=</span><span class="p">{</span><span class="s1">'seed'</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
@@ -8227,8 +8419,8 @@ $$\delta_j^{t+1}= \delta_j^t + ln(s_j^{obs}) - ln(s_j(\delta^t,\theta))$$</p>
 <span class="n">results1</span> <span class="o">=</span> <span class="n">mc_problem</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sigma</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span> <span class="n">optimization</span><span class="o">=</span><span class="n">bfgs</span><span class="p">)</span>
 <span class="n">results1</span>
 
-<span class="n">results2</span> <span class="o">=</span> <span class="n">mc_problem</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sigma</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">optimization</span><span class="o">=</span><span class="n">bfgs</span><span class="p">)</span>
-<span class="n">results2</span>
+<span class="c1">#results2 = mc_problem.solve(sigma=np.eye(7), optimization=bfgs)</span>
+<span class="c1">#results2</span>
 </pre></div>
 </div>
 </div>
@@ -8282,38 +8474,17 @@ Starting optimization ...
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>The model may be under-identified. The total number of unfixed parameters is 34, which is more than the total number of moments, 5. Consider checking whether instruments were properly specified when initializing the problem, and whether parameters were properly configured when solving the problem.
-ERROR:tornado.application:Exception in callback functools.partial(&lt;bound method OutStream._flush of &lt;ipykernel.iostream.OutStream object at 0x7f1096bfb6a0&gt;&gt;)
-Traceback (most recent call last):
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-          ^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/ipykernel/iostream.py", line 639, in _flush
-    msg = self.session.msg("stream", content, parent=parent)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 661, in msg
-    header = self.msg_header(msg_type) if header is None else header
-             ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 644, in msg_header
-    return msg_header(self.msg_id, msg_type, self.username, self.session)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 275, in msg_header
-    date = utcnow()
-           ^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 203, in utcnow
-    return datetime.utcnow().replace(tzinfo=utc)
-           ^^^^^^^^^^^^^^^^^
-DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> 1     00:00:00         0             2           289          874         0     +2.0244918422545E-26  +8.5072820488317E-28  +1.5408216236289E-12  +9.9999999999994E-01, +1.0000000000000E+00, +1.0000000000002E+00, +9.9999999999911E-01, +9.9999999999938E-01, +1.0000000000002E+00, +1.0000000000014E+00, +1.0000000000012E+00, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000014E+00, +1.0000000000014E+00, +1.0000000000003E+00, +1.0000000000000E+00, +9.9999999999997E-01, +9.9999999999985E-01, +9.9999999999988E-01, +1.0000000000001E+00, +1.0000000000002E+00, +1.0000000000001E+00, +9.9999999999996E-01, +9.9999999999983E-01, +9.9999999999984E-01, +1.0000000000001E+00, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999997E-01
- 1     00:00:00         0             3           289          878         0     +1.9920805256139E-26  +3.2411316640615E-28  +1.5614458852229E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
- 1     00:00:00         1             4           287          871         0     +2.9563479070908E-26                        +1.8955266408674E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
- 1     00:00:00         1             5           289          878         0     +1.9920805256139E-26                        +1.5614458852229E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
- 1     00:00:00         1             6           287          871         0     +2.9563479070908E-26                        +1.8955266408674E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
+<pre>GMM   Computation  Optimization   Objective   Fixed Point  Contraction  Clipped       Objective             Objective              Gradient                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+Step     Time       Iterations   Evaluations  Iterations   Evaluations  Shares          Value              Improvement               Norm                                                                                                                                                                                                                                                                                                                          Theta                                                                                                                                                                                                                                                                                                                 
+----  -----------  ------------  -----------  -----------  -----------  -------  --------------------  --------------------  --------------------  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 1     00:00:00         0             1           289          875         0     +2.1095646627429E-26                        +1.4360154494112E-12  +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00
+ 1     00:00:00         0             2           289          874         0     +2.0244918422545E-26  +8.5072820488317E-28  +1.5408216236289E-12  +9.9999999999994E-01, +1.0000000000000E+00, +1.0000000000002E+00, +9.9999999999911E-01, +9.9999999999938E-01, +1.0000000000002E+00, +1.0000000000014E+00, +1.0000000000012E+00, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000014E+00, +1.0000000000014E+00, +1.0000000000003E+00, +1.0000000000000E+00, +9.9999999999997E-01, +9.9999999999985E-01, +9.9999999999988E-01, +1.0000000000001E+00, +1.0000000000002E+00, +1.0000000000001E+00, +9.9999999999996E-01, +9.9999999999983E-01, +9.9999999999984E-01, +1.0000000000001E+00, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999997E-01
 </pre>
 </div>
 </div>
@@ -8347,188 +8518,180 @@ DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for r
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> 1     00:00:00         1             8           286          868         0     +4.2320586612017E-26                        +1.8842642122031E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
+<pre> 1     00:00:00         1             4           287          871         0     +2.9563479070908E-26                        +1.8955266408674E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
+ 1     00:00:00         1             5           289          878         0     +1.9920805256139E-26                        +1.5614458852229E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
+ 1     00:00:00         1             6           287          871         0     +2.9563479070908E-26                        +1.8955266408674E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
+ 1     00:00:00         1             7           289          878         0     +2.9329679174586E-26                        +1.8833304272592E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
+ 1     00:00:01         1             8           286          868         0     +4.2320586612017E-26                        +1.8842642122031E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
  1     00:00:00         1             9           289          878         0     +1.9920805256139E-26                        +1.5614458852229E-12  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
 
 The optimization routine failed to converge. This problem can sometimes be mitigated by choosing more reasonable initial parameter values, setting more conservative bounds, or configuring other optimization settings.
 
 
-Optimization failed after 00:00:03.
+Optimization failed after 00:00:04.
 Computing the Hessian and and updating the weighting matrix ...
-Computed results after 00:00:13.
-
-Problem Results Summary:
-===========================================================================================================================
-GMM        Objective              Gradient               Hessian               Hessian        Clipped    Weighting Matrix  
-Step         Value                  Norm             Min Eigenvalue        Max Eigenvalue     Shares     Condition Number  
-----  --------------------  --------------------  --------------------  --------------------  -------  --------------------
- 1    +1.9920805256139E-26  +1.5614458852229E-12  -2.9176296080531E-04  +3.1418709849730E-04     0     +9.1579102736529E+01
-===========================================================================================================================
-
-Starting optimization ...
-
-GMM   Computation  Optimization   Objective   Fixed Point  Contraction  Clipped       Objective             Objective              Gradient                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-Step     Time       Iterations   Evaluations  Iterations   Evaluations  Shares          Value              Improvement               Norm                                                                                                                                                                                                                                                                                                                          Theta                                                                                                                                                                                                                                                                                                                 
-----  -----------  ------------  -----------  -----------  -----------  -------  --------------------  --------------------  --------------------  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 2     00:00:00         0             1            0           11          0     +6.0533391004769E-26                        +4.7124267143486E-13  +9.9999999999999E-01, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999981E-01, +9.9999999999986E-01, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000003E+00, +1.0000000000003E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999997E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999996E-01, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999999E-01, +9.9999999999999E-01
- 2     00:00:00         0             2           38           126         0     +3.1247090742030E-26  +2.9286300262740E-26  +4.1981634940432E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1             3           38           127         0     +5.0124789450571E-26                        +4.9930396810756E-13  +9.9999999999998E-01, +9.9999999999960E-01, +9.9999999999953E-01, +9.9999999999946E-01, +9.9999999999965E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999994E-01, +9.9999999999998E-01, +9.9999999999962E-01, +1.0000000000005E+00, +1.0000000000006E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999989E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999994E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1             4           37           122         0     +5.5345870726670E-26                        +6.2549288652871E-13  +9.9999999999998E-01, +9.9999999999962E-01, +9.9999999999956E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999964E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1             5           35           118         0     +4.6923353827549E-26                        +4.0255780203410E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>ERROR:tornado.application:Exception in callback functools.partial(&lt;bound method OutStream._flush of &lt;ipykernel.iostream.OutStream object at 0x7f1096bfb6a0&gt;&gt;)
-Traceback (most recent call last):
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-          ^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/ipykernel/iostream.py", line 639, in _flush
-    msg = self.session.msg("stream", content, parent=parent)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 661, in msg
-    header = self.msg_header(msg_type) if header is None else header
-             ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 644, in msg_header
-    return msg_header(self.msg_id, msg_type, self.username, self.session)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 275, in msg_header
-    date = utcnow()
-           ^^^^^^^^
-  File "/home/hspassos/anaconda3/envs/blp_python/lib/python3.12/site-packages/jupyter_client/session.py", line 203, in utcnow
-    return datetime.utcnow().replace(tzinfo=utc)
-           ^^^^^^^^^^^^^^^^^
-DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> 2     00:00:00         1             9           35           119         0     +6.6824555505262E-26                        +4.7097457160500E-13  +9.9999999999998E-01, +9.9999999999962E-01, +9.9999999999956E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999964E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            10           35           118         0     +6.0963114828689E-26                        +4.3727056907543E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999964E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            11           36           120         0     +5.3255367199067E-26                        +4.7140564707289E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            12           37           124         0     +2.9012006319926E-26  +2.2350844221041E-27  +3.9014494604562E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            13           37           124         0     +6.2098836161097E-26                        +4.2781604140423E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            14           38           126         0     +4.7389390548980E-26                        +4.8196706324669E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            15           37           120         0     +4.5780218133173E-26                        +4.9812354105641E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            16           38           127         0     +3.6733960938338E-26                        +3.3692719887678E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
- 2     00:00:00         1            17           35           119         0     +6.4893051219192E-26                        +5.1985858289360E-13  +9.9999999999998E-01, +9.9999999999963E-01, +9.9999999999957E-01, +9.9999999999949E-01, +9.9999999999967E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999995E-01, +9.9999999999998E-01, +9.9999999999965E-01, +1.0000000000005E+00, +1.0000000000005E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999990E-01, +1.0000000000001E+00, +1.0000000000001E+00, +9.9999999999997E-01, +1.0000000000000E+00, +1.0000000000000E+00, +1.0000000000000E+00, +9.9999999999995E-01, +9.9999999999995E-01, +1.0000000000001E+00, +1.0000000000000E+00, +1.0000000000001E+00, +1.0000000000000E+00, +9.9999999999998E-01
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[246], line 9</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> mc_problem <span style="color: rgb(98,98,98)">=</span> pyblp<span style="color: rgb(98,98,98)">.</span>Problem(product_formulations, data, integration<span style="color: rgb(98,98,98)">=</span>mc_integration)
+<span class="ansi-green-intense-fg ansi-bold">      7</span> bfgs <span style="color: rgb(98,98,98)">=</span> pyblp<span style="color: rgb(98,98,98)">.</span>Optimization(<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">bfgs</span><span style="color: rgb(175,0,0)">'</span>, {<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">gtol</span><span style="color: rgb(175,0,0)">'</span>: <span style="color: rgb(98,98,98)">1e-14</span>})
+<span class="ansi-green-fg">----&gt; 9</span> results1 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">mc_problem</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">solve</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">sigma</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">np</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">ones</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">7</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">7</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">optimization</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">bfgs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     10</span> results1
+<span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(95,135,135)">#results2 = mc_problem.solve(sigma=np.eye(7), optimization=bfgs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span> <span style="color: rgb(95,135,135)">#results2</span>
 
-The optimization routine failed to converge. This problem can sometimes be mitigated by choosing more reasonable initial parameter values, setting more conservative bounds, or configuring other optimization settings.
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/economies/problem.py:715</span>, in <span class="ansi-cyan-fg">ProblemEconomy.solve</span><span class="ansi-blue-fg">(self, sigma, pi, rho, beta, gamma, sigma_bounds, pi_bounds, rho_bounds, beta_bounds, gamma_bounds, delta, method, initial_update, optimization, scale_objective, check_optimality, finite_differences, error_behavior, error_punishment, delta_behavior, iteration, fp_type, shares_bounds, costs_bounds, W, center_moments, W_type, se_type, covariance_moments_mean, micro_moments, micro_sample_covariances, resample_agent_data)</span>
+<span class="ansi-green-intense-fg ansi-bold">    713</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-intense-fg ansi-bold">    714</span>     output(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Estimating standard errors ...</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg">--&gt; 715</span> final_progress <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">compute_step_progress</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    716</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">theta</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">progress</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">compute_gradient</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">compute_hessian</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">compute_micro_covariances</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    717</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">detect_micro_collinearity</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">compute_simulation_covariances</span>
+<span class="ansi-green-intense-fg ansi-bold">    718</span> <span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    719</span> iteration_stats<span style="color: rgb(98,98,98)">.</span>append(final_progress<span style="color: rgb(98,98,98)">.</span>iteration_stats)
+<span class="ansi-green-intense-fg ansi-bold">    720</span> optimization_stats<span style="color: rgb(98,98,98)">.</span>evaluations <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">1</span>
 
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/economies/problem.py:1172</span>, in <span class="ansi-cyan-fg">ProblemEconomy._compute_progress</span><span class="ansi-blue-fg">(self, parameters, moments, iv, W, scale_objective, error_behavior, error_punishment, delta_behavior, iteration, fp_type, shares_bounds, costs_bounds, finite_differences, covariance_moments_mean, resample_agent_data, theta, progress, compute_gradient, compute_hessian, compute_micro_covariances, detect_micro_collinearity, compute_simulation_covariances, agents_override)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1169</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> perturbed_progress<span style="color: rgb(98,98,98)">.</span>gradient
+<span class="ansi-green-intense-fg ansi-bold">   1171</span>     <span style="color: rgb(95,135,135)"># compute the Hessian, enforcing shape and symmetry</span>
+<span class="ansi-green-fg">-&gt; 1172</span>     hessian <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">compute_finite_differences</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">compute_perturbed_gradient</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">theta</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1173</span>     hessian <span style="color: rgb(98,98,98)">=</span> np<span style="color: rgb(98,98,98)">.</span>c_[hessian <span style="color: rgb(98,98,98)">+</span> hessian<span style="color: rgb(98,98,98)">.</span>T] <span style="color: rgb(98,98,98)">/</span> <span style="color: rgb(98,98,98)">2</span>
+<span class="ansi-green-intense-fg ansi-bold">   1175</span> <span style="color: rgb(95,135,135)"># optionally resample agents to compute simulation covariances</span>
 
-Optimization failed after 00:00:02.
-Computing the Hessian and estimating standard errors ...
-Computed results after 00:00:11.
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/utilities/basics.py:412</span>, in <span class="ansi-cyan-fg">compute_finite_differences</span><span class="ansi-blue-fg">(f, x, epsilon_scale)</span>
+<span class="ansi-green-intense-fg ansi-bold">    410</span>     x1[index] <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> epsilon <span style="color: rgb(98,98,98)">/</span> <span style="color: rgb(98,98,98)">2</span>
+<span class="ansi-green-intense-fg ansi-bold">    411</span>     x2[index] <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">=</span> epsilon <span style="color: rgb(98,98,98)">/</span> <span style="color: rgb(98,98,98)">2</span>
+<span class="ansi-green-fg">--&gt; 412</span>     arrays<span style="color: rgb(98,98,98)">.</span>append((f(x1) <span style="color: rgb(98,98,98)">-</span> <span class="ansi-yellow-bg">f</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">x2</span><span class="ansi-yellow-bg">)</span>) <span style="color: rgb(98,98,98)">/</span> epsilon)
+<span class="ansi-green-intense-fg ansi-bold">    414</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">len</span>(arrays[<span style="color: rgb(98,98,98)">0</span>]<span style="color: rgb(98,98,98)">.</span>shape) <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">1</span> <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> (<span style="color: rgb(0,135,0)">len</span>(arrays[<span style="color: rgb(98,98,98)">0</span>]<span style="color: rgb(98,98,98)">.</span>shape) <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">2</span> <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> arrays[<span style="color: rgb(98,98,98)">0</span>]<span style="color: rgb(98,98,98)">.</span>shape[<span style="color: rgb(98,98,98)">1</span>] <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">1</span>):
+<span class="ansi-green-intense-fg ansi-bold">    415</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> np<span style="color: rgb(98,98,98)">.</span>column_stack(arrays)
 
-Problem Results Summary:
-=================================================================================================================================================
-GMM        Objective              Gradient               Hessian               Hessian        Clipped    Weighting Matrix     Covariance Matrix  
-Step         Value                  Norm             Min Eigenvalue        Max Eigenvalue     Shares     Condition Number      Condition Number  
-----  --------------------  --------------------  --------------------  --------------------  -------  --------------------  --------------------
- 2    +3.1247090742030E-26  +4.1981634940432E-13  -6.4693617698989E-05  +7.1284129245656E-05     0     +6.2384331654490E+02  +8.5572903008789E+19
-=================================================================================================================================================
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/economies/problem.py:1162</span>, in <span class="ansi-cyan-fg">ProblemEconomy._compute_progress.&lt;locals&gt;.compute_perturbed_gradient</span><span class="ansi-blue-fg">(perturbed_theta)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1160</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compute_perturbed_gradient</span>(perturbed_theta: Array) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Array:
+<span class="ansi-green-intense-fg ansi-bold">   1161</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""Evaluate the gradient at a perturbed parameter vector."""</span>
+<span class="ansi-green-fg">-&gt; 1162</span>     perturbed_progress <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_compute_progress</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">   1163</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">parameters</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">moments</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">iv</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">W</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">scale_objective</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">error_behavior</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">error_punishment</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">delta_behavior</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1164</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">iteration</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">fp_type</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">shares_bounds</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">costs_bounds</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">finite_differences</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">covariance_moments_mean</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1165</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">resample_agent_data</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">perturbed_theta</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">progress</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">compute_gradient</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">compute_hessian</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1166</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">compute_micro_covariances</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">detect_micro_collinearity</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1167</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">compute_simulation_covariances</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">False</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1168</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1169</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> perturbed_progress<span style="color: rgb(98,98,98)">.</span>gradient
 
-Cumulative Statistics:
-===========================================================================
-Computation  Optimizer  Optimization   Objective   Fixed Point  Contraction
-   Time      Converged   Iterations   Evaluations  Iterations   Evaluations
------------  ---------  ------------  -----------  -----------  -----------
- 00:00:29       No           2            28          3510         10852   
-===========================================================================
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/economies/problem.py:839</span>, in <span class="ansi-cyan-fg">ProblemEconomy._compute_progress</span><span class="ansi-blue-fg">(self, parameters, moments, iv, W, scale_objective, error_behavior, error_punishment, delta_behavior, iteration, fp_type, shares_bounds, costs_bounds, finite_differences, covariance_moments_mean, resample_agent_data, theta, progress, compute_gradient, compute_hessian, compute_micro_covariances, detect_micro_collinearity, compute_simulation_covariances, agents_override)</span>
+<span class="ansi-green-intense-fg ansi-bold">    837</span> parts_collinearity_candidate_values: Dict[Hashable, Dict[MicroDataset, Array]] <span style="color: rgb(98,98,98)">=</span> {}
+<span class="ansi-green-intense-fg ansi-bold">    838</span> generator <span style="color: rgb(98,98,98)">=</span> generate_items(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>unique_market_ids, market_factory, ProblemMarket<span style="color: rgb(98,98,98)">.</span>solve)
+<span class="ansi-green-fg">--&gt; 839</span> <span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">for</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">generated_t</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,0,255)">in</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">generator</span><span class="ansi-yellow-bg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    840</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    841</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">delta_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">xi_jacobian_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">parts_numerator_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">parts_denominator_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">parts_numerator_jacobian_t</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    842</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">parts_denominator_jacobian_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">parts_covariances_numerator_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">weights_mapping_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">values_mapping_t</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    843</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">clipped_shares_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">iteration_stats_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">tilde_costs_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">omega_jacobian_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">clipped_costs_t</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">errors_t</span>
+<span class="ansi-green-intense-fg ansi-bold">    844</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">generated_t</span>
+<span class="ansi-green-intense-fg ansi-bold">    846</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">delta</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_product_market_indices</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">delta_t</span>
 
-Nonlinear Coefficient Estimates (Robust SEs in Parentheses):
-==========================================================================================================================================================================================================================================================================================================================================================================
-Sigma:             1                     prices                  char1                   char2                   char3                  costsh1                 costsh2          |  Sigma Squared:            1                     prices                  char1                   char2                   char3                  costsh1                 costsh2        
--------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  |  --------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------
-   1      +9.9999999999998E-01                                                                                                                                                   |        1          +9.9999999999997E-01    +9.9999999999961E-01    +9.9999999999947E-01    +1.0000000000001E+00    +1.0000000000005E+00    +1.0000000000001E+00    +9.9999999999993E-01 
-         (+2.5646592826311E-03)                                                                                                                                                  |                  (+5.1293185652622E-03)  (+1.3207545868449E-01)  (+1.5058832748724E-01)  (+8.9404092204642E-02)  (+9.3373440200829E-02)  (+1.7107045772261E-01)  (+2.6340767802889E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
-prices    +9.9999999999963E-01    +9.9999999999957E-01                                                                                                                           |      prices       +9.9999999999961E-01    +1.9999999999984E+00    +1.9999999999984E+00    +1.9999999999993E+00    +2.0000000000003E+00    +1.9999999999994E+00    +1.9999999999991E+00 
-         (+1.3184999792281E-01)  (+1.3991843509955E-01)                                                                                                                          |                  (+1.3207545868449E-01)  (+5.3590031997448E-01)  (+3.8885552172465E-01)  (+4.3424917372389E-01)  (+2.1839917494496E-01)  (+5.1392529984977E-01)  (+4.8697033740639E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
- char1    +9.9999999999949E-01    +9.9999999999967E-01    +1.0000000000001E+00                                                                                                   |      char1        +9.9999999999947E-01    +1.9999999999984E+00    +2.9999999999985E+00    +2.9999999999993E+00    +3.0000000000004E+00    +2.9999999999994E+00    +2.9999999999992E+00 
-         (+1.4880232509789E-01)  (+8.0273493684577E-02)  (+9.4414289766014E-02)                                                                                                  |                  (+1.5058832748724E-01)  (+3.8885552172465E-01)  (+3.6269074507471E-01)  (+3.8084105778425E-01)  (+2.8790374275702E-01)  (+2.3897977261083E-01)  (+5.0303961256615E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
- char2    +1.0000000000001E+00    +9.9999999999995E-01    +9.9999999999998E-01    +9.9999999999965E-01                                                                           |      char2        +1.0000000000001E+00    +1.9999999999993E+00    +2.9999999999993E+00    +3.9999999999994E+00    +4.0000000000008E+00    +3.9999999999998E+00    +3.9999999999997E+00 
-         (+8.7941082407489E-02)  (+1.4071118102061E-01)  (+4.2451382594656E-02)  (+1.3039574930044E-01)                                                                          |                  (+8.9404092204642E-02)  (+4.3424917372389E-01)  (+3.8084105778425E-01)  (+7.3633613361793E-01)  (+2.4854032239524E-01)  (+4.8473258216525E-01)  (+4.4218389501217E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
- char3    +1.0000000000005E+00    +1.0000000000005E+00    +1.0000000000001E+00    +1.0000000000000E+00    +9.9999999999990E-01                                                   |      char3        +1.0000000000005E+00    +2.0000000000003E+00    +3.0000000000004E+00    +4.0000000000008E+00    +5.0000000000021E+00    +5.0000000000012E+00    +5.0000000000011E+00 
-         (+9.5426665448296E-02)  (+1.1099111604828E-01)  (+1.6537543482697E-01)  (+1.3255442181497E-01)  (+7.5283353952592E-02)                                                  |                  (+9.3373440200829E-02)  (+2.1839917494496E-01)  (+2.8790374275702E-01)  (+2.4854032239524E-01)  (+9.7494536173366E-01)  (+5.5271441003316E-01)  (+9.4982228556229E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
-costsh1   +1.0000000000001E+00    +1.0000000000001E+00    +9.9999999999997E-01    +1.0000000000000E+00    +1.0000000000000E+00    +1.0000000000000E+00                           |     costsh1       +1.0000000000001E+00    +1.9999999999994E+00    +2.9999999999994E+00    +3.9999999999998E+00    +5.0000000000012E+00    +6.0000000000003E+00    +6.0000000000002E+00 
-         (+1.7209551147330E-01)  (+1.6301684701002E-01)  (+2.0104049049979E-02)  (+3.1957990853817E-02)  (+1.7559969886542E-02)  (+1.3298527238005E-02)                          |                  (+1.7107045772261E-01)  (+5.1392529984977E-01)  (+2.3897977261083E-01)  (+4.8473258216525E-01)  (+5.5271441003316E-01)  (+6.2362815988359E-01)  (+4.5250014100917E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
-costsh2   +9.9999999999995E-01    +9.9999999999995E-01    +1.0000000000001E+00    +1.0000000000000E+00    +1.0000000000001E+00    +1.0000000000000E+00    +9.9999999999998E-01   |     costsh2       +9.9999999999993E-01    +1.9999999999991E+00    +2.9999999999992E+00    +3.9999999999997E+00    +5.0000000000011E+00    +6.0000000000002E+00    +7.0000000000000E+00 
-         (+2.6398477796815E-01)  (+2.4699729656152E-01)  (+1.2703129848035E-02)  (+1.6743589140495E-02)  (+2.4658442430366E-02)  (+1.1503218110289E-02)  (+2.3565435220409E-02)  |                  (+2.6340767802889E-01)  (+4.8697033740639E-01)  (+5.0303961256615E-01)  (+4.4218389501217E-01)  (+9.4982228556229E-01)  (+4.5250014100917E-01)  (+1.0570647756308E+00)
-==========================================================================================================================================================================================================================================================================================================================================================================
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/utilities/basics.py:164</span>, in <span class="ansi-cyan-fg">&lt;genexpr&gt;</span><span class="ansi-blue-fg">(.0)</span>
+<span class="ansi-green-intense-fg ansi-bold">    159</span> <span style="color: rgb(175,0,0)">"""Generate (key, method(*factory(key))) tuples for each key. The first element returned by factory is an instance</span>
+<span class="ansi-green-intense-fg ansi-bold">    160</span> <span style="color: rgb(175,0,0)">of the class to which method is attached. If a process pool has been initialized, use multiprocessing; otherwise,</span>
+<span class="ansi-green-intense-fg ansi-bold">    161</span> <span style="color: rgb(175,0,0)">use serial processing.</span>
+<span class="ansi-green-intense-fg ansi-bold">    162</span> <span style="color: rgb(175,0,0)">"""</span>
+<span class="ansi-green-intense-fg ansi-bold">    163</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> pool <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; 164</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> (<span class="ansi-yellow-bg">generate_items_worker</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">k</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">factory</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">k</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">method</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">)</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> k <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> keys)
+<span class="ansi-green-intense-fg ansi-bold">    165</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> pool<span style="color: rgb(98,98,98)">.</span>imap_unordered(generate_items_worker, ((k, factory(k), method) <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> k <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> keys))
 
-Beta Estimates (Robust SEs in Parentheses):
-==============================================================================================================================================
-        prices                  char1                   char2                   char3                  costsh1                 costsh2        
-----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------
- -4.1707432781090E+00    -3.2391633241385E-02    -5.5085591957456E-01    -5.6303480514095E-01    -2.1522577797152E+00    -2.8679942066731E+00 
-(+1.4491747153455E-01)  (+1.7680611626277E-01)  (+1.8504052281318E-01)  (+1.5484102168733E-01)  (+2.4464903720885E-01)  (+3.8605561201587E-01)
-==============================================================================================================================================
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>Problem Results Summary:
-=================================================================================================================================================
-GMM        Objective              Gradient               Hessian               Hessian        Clipped    Weighting Matrix     Covariance Matrix  
-Step         Value                  Norm             Min Eigenvalue        Max Eigenvalue     Shares     Condition Number      Condition Number  
-----  --------------------  --------------------  --------------------  --------------------  -------  --------------------  --------------------
- 2    +3.1247090742030E-26  +4.1981634940432E-13  -6.4693617698989E-05  +7.1284129245656E-05     0     +6.2384331654490E+02  +8.5572903008789E+19
-=================================================================================================================================================
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/utilities/basics.py:173</span>, in <span class="ansi-cyan-fg">generate_items_worker</span><span class="ansi-blue-fg">(args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    169</span> <span style="color: rgb(175,0,0)">"""Call the specified method of a class instance with any additional arguments. Return the associated key along with</span>
+<span class="ansi-green-intense-fg ansi-bold">    170</span> <span style="color: rgb(175,0,0)">the returned object.</span>
+<span class="ansi-green-intense-fg ansi-bold">    171</span> <span style="color: rgb(175,0,0)">"""</span>
+<span class="ansi-green-intense-fg ansi-bold">    172</span> key, (instance, <span style="color: rgb(98,98,98)">*</span>method_args), method <span style="color: rgb(98,98,98)">=</span> args
+<span class="ansi-green-fg">--&gt; 173</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> key, <span class="ansi-yellow-bg">method</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">instance</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">method_args</span><span class="ansi-yellow-bg">)</span>
 
-Cumulative Statistics:
-===========================================================================
-Computation  Optimizer  Optimization   Objective   Fixed Point  Contraction
-   Time      Converged   Iterations   Evaluations  Iterations   Evaluations
------------  ---------  ------------  -----------  -----------  -----------
- 00:00:29       No           2            28          3510         10852   
-===========================================================================
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/utilities/basics.py:665</span>, in <span class="ansi-cyan-fg">NumericalErrorHandler.__call__.&lt;locals&gt;.wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    663</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> np<span style="color: rgb(98,98,98)">.</span>errstate(divide<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">call</span><span style="color: rgb(175,0,0)">'</span>, over<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">call</span><span style="color: rgb(175,0,0)">'</span>, under<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">ignore</span><span style="color: rgb(175,0,0)">'</span>, invalid<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">call</span><span style="color: rgb(175,0,0)">'</span>):
+<span class="ansi-green-intense-fg ansi-bold">    664</span>     np<span style="color: rgb(98,98,98)">.</span>seterrcall(detector)
+<span class="ansi-green-fg">--&gt; 665</span>     returned <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">decorated</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    666</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> detector<span style="color: rgb(98,98,98)">.</span>detected <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    667</span>     returned[<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1</span>]<span style="color: rgb(98,98,98)">.</span>append(detector<span style="color: rgb(98,98,98)">.</span>detected)
 
-Nonlinear Coefficient Estimates (Robust SEs in Parentheses):
-==========================================================================================================================================================================================================================================================================================================================================================================
-Sigma:             1                     prices                  char1                   char2                   char3                  costsh1                 costsh2          |  Sigma Squared:            1                     prices                  char1                   char2                   char3                  costsh1                 costsh2        
--------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  |  --------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------
-   1      +9.9999999999998E-01                                                                                                                                                   |        1          +9.9999999999997E-01    +9.9999999999961E-01    +9.9999999999947E-01    +1.0000000000001E+00    +1.0000000000005E+00    +1.0000000000001E+00    +9.9999999999993E-01 
-         (+2.5646592826311E-03)                                                                                                                                                  |                  (+5.1293185652622E-03)  (+1.3207545868449E-01)  (+1.5058832748724E-01)  (+8.9404092204642E-02)  (+9.3373440200829E-02)  (+1.7107045772261E-01)  (+2.6340767802889E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
-prices    +9.9999999999963E-01    +9.9999999999957E-01                                                                                                                           |      prices       +9.9999999999961E-01    +1.9999999999984E+00    +1.9999999999984E+00    +1.9999999999993E+00    +2.0000000000003E+00    +1.9999999999994E+00    +1.9999999999991E+00 
-         (+1.3184999792281E-01)  (+1.3991843509955E-01)                                                                                                                          |                  (+1.3207545868449E-01)  (+5.3590031997448E-01)  (+3.8885552172465E-01)  (+4.3424917372389E-01)  (+2.1839917494496E-01)  (+5.1392529984977E-01)  (+4.8697033740639E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
- char1    +9.9999999999949E-01    +9.9999999999967E-01    +1.0000000000001E+00                                                                                                   |      char1        +9.9999999999947E-01    +1.9999999999984E+00    +2.9999999999985E+00    +2.9999999999993E+00    +3.0000000000004E+00    +2.9999999999994E+00    +2.9999999999992E+00 
-         (+1.4880232509789E-01)  (+8.0273493684577E-02)  (+9.4414289766014E-02)                                                                                                  |                  (+1.5058832748724E-01)  (+3.8885552172465E-01)  (+3.6269074507471E-01)  (+3.8084105778425E-01)  (+2.8790374275702E-01)  (+2.3897977261083E-01)  (+5.0303961256615E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
- char2    +1.0000000000001E+00    +9.9999999999995E-01    +9.9999999999998E-01    +9.9999999999965E-01                                                                           |      char2        +1.0000000000001E+00    +1.9999999999993E+00    +2.9999999999993E+00    +3.9999999999994E+00    +4.0000000000008E+00    +3.9999999999998E+00    +3.9999999999997E+00 
-         (+8.7941082407489E-02)  (+1.4071118102061E-01)  (+4.2451382594656E-02)  (+1.3039574930044E-01)                                                                          |                  (+8.9404092204642E-02)  (+4.3424917372389E-01)  (+3.8084105778425E-01)  (+7.3633613361793E-01)  (+2.4854032239524E-01)  (+4.8473258216525E-01)  (+4.4218389501217E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
- char3    +1.0000000000005E+00    +1.0000000000005E+00    +1.0000000000001E+00    +1.0000000000000E+00    +9.9999999999990E-01                                                   |      char3        +1.0000000000005E+00    +2.0000000000003E+00    +3.0000000000004E+00    +4.0000000000008E+00    +5.0000000000021E+00    +5.0000000000012E+00    +5.0000000000011E+00 
-         (+9.5426665448296E-02)  (+1.1099111604828E-01)  (+1.6537543482697E-01)  (+1.3255442181497E-01)  (+7.5283353952592E-02)                                                  |                  (+9.3373440200829E-02)  (+2.1839917494496E-01)  (+2.8790374275702E-01)  (+2.4854032239524E-01)  (+9.7494536173366E-01)  (+5.5271441003316E-01)  (+9.4982228556229E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
-costsh1   +1.0000000000001E+00    +1.0000000000001E+00    +9.9999999999997E-01    +1.0000000000000E+00    +1.0000000000000E+00    +1.0000000000000E+00                           |     costsh1       +1.0000000000001E+00    +1.9999999999994E+00    +2.9999999999994E+00    +3.9999999999998E+00    +5.0000000000012E+00    +6.0000000000003E+00    +6.0000000000002E+00 
-         (+1.7209551147330E-01)  (+1.6301684701002E-01)  (+2.0104049049979E-02)  (+3.1957990853817E-02)  (+1.7559969886542E-02)  (+1.3298527238005E-02)                          |                  (+1.7107045772261E-01)  (+5.1392529984977E-01)  (+2.3897977261083E-01)  (+4.8473258216525E-01)  (+5.5271441003316E-01)  (+6.2362815988359E-01)  (+4.5250014100917E-01)
-                                                                                                                                                                                 |                                                                                                                                                                                        
-costsh2   +9.9999999999995E-01    +9.9999999999995E-01    +1.0000000000001E+00    +1.0000000000000E+00    +1.0000000000001E+00    +1.0000000000000E+00    +9.9999999999998E-01   |     costsh2       +9.9999999999993E-01    +1.9999999999991E+00    +2.9999999999992E+00    +3.9999999999997E+00    +5.0000000000011E+00    +6.0000000000002E+00    +7.0000000000000E+00 
-         (+2.6398477796815E-01)  (+2.4699729656152E-01)  (+1.2703129848035E-02)  (+1.6743589140495E-02)  (+2.4658442430366E-02)  (+1.1503218110289E-02)  (+2.3565435220409E-02)  |                  (+2.6340767802889E-01)  (+4.8697033740639E-01)  (+5.0303961256615E-01)  (+4.4218389501217E-01)  (+9.4982228556229E-01)  (+4.5250014100917E-01)  (+1.0570647756308E+00)
-==========================================================================================================================================================================================================================================================================================================================================================================
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/markets/problem_market.py:37</span>, in <span class="ansi-cyan-fg">ProblemMarket.solve</span><span class="ansi-blue-fg">(self, delta, last_delta, last_tilde_costs, moments, iteration, fp_type, shares_bounds, costs_bounds, compute_jacobians, compute_micro_covariances, keep_micro_mappings)</span>
+<span class="ansi-green-intense-fg ansi-bold">     34</span> errors: List[Error] <span style="color: rgb(98,98,98)">=</span> []
+<span class="ansi-green-intense-fg ansi-bold">     36</span> <span style="color: rgb(95,135,135)"># solve the contraction</span>
+<span class="ansi-green-fg">---&gt; 37</span> delta, clipped_shares, stats, delta_errors <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">safely_compute_delta</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">delta</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">iteration</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">fp_type</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">shares_bounds</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     38</span> errors<span style="color: rgb(98,98,98)">.</span>extend(delta_errors)
+<span class="ansi-green-intense-fg ansi-bold">     40</span> <span style="color: rgb(95,135,135)"># replace invalid values in delta with their last computed values</span>
 
-Beta Estimates (Robust SEs in Parentheses):
-==============================================================================================================================================
-        prices                  char1                   char2                   char3                  costsh1                 costsh2        
-----------------------  ----------------------  ----------------------  ----------------------  ----------------------  ----------------------
- -4.1707432781090E+00    -3.2391633241385E-02    -5.5085591957456E-01    -5.6303480514095E-01    -2.1522577797152E+00    -2.8679942066731E+00 
-(+1.4491747153455E-01)  (+1.7680611626277E-01)  (+1.8504052281318E-01)  (+1.5484102168733E-01)  (+2.4464903720885E-01)  (+3.8605561201587E-01)
-==============================================================================================================================================</pre>
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/utilities/basics.py:665</span>, in <span class="ansi-cyan-fg">NumericalErrorHandler.__call__.&lt;locals&gt;.wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    663</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> np<span style="color: rgb(98,98,98)">.</span>errstate(divide<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">call</span><span style="color: rgb(175,0,0)">'</span>, over<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">call</span><span style="color: rgb(175,0,0)">'</span>, under<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">ignore</span><span style="color: rgb(175,0,0)">'</span>, invalid<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">call</span><span style="color: rgb(175,0,0)">'</span>):
+<span class="ansi-green-intense-fg ansi-bold">    664</span>     np<span style="color: rgb(98,98,98)">.</span>seterrcall(detector)
+<span class="ansi-green-fg">--&gt; 665</span>     returned <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">decorated</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    666</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> detector<span style="color: rgb(98,98,98)">.</span>detected <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    667</span>     returned[<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1</span>]<span style="color: rgb(98,98,98)">.</span>append(detector<span style="color: rgb(98,98,98)">.</span>detected)
+
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/markets/problem_market.py:145</span>, in <span class="ansi-cyan-fg">ProblemMarket.safely_compute_delta</span><span class="ansi-blue-fg">(self, initial_delta, iteration, fp_type, shares_bounds)</span>
+<span class="ansi-green-intense-fg ansi-bold">    138</span> <span style="color: rgb(175,0,255)">@NumericalErrorHandler</span>(exceptions<span style="color: rgb(98,98,98)">.</span>DeltaNumericalError)
+<span class="ansi-green-intense-fg ansi-bold">    139</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">safely_compute_delta</span>(
+<span class="ansi-green-intense-fg ansi-bold">    140</span>         <span style="color: rgb(0,135,0)">self</span>, initial_delta: Array, iteration: Iteration, fp_type: <span style="color: rgb(0,135,0)">str</span>, shares_bounds: Bounds) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> (
+<span class="ansi-green-intense-fg ansi-bold">    141</span>         Tuple[Array, Array, SolverStats, List[Error]]):
+<span class="ansi-green-intense-fg ansi-bold">    142</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""Compute the mean utility for this market that equates market shares to observed values by solving a fixed</span>
+<span class="ansi-green-intense-fg ansi-bold">    143</span> <span style="color: rgb(175,0,0)">    point problem, handling any numerical errors.</span>
+<span class="ansi-green-intense-fg ansi-bold">    144</span> <span style="color: rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">--&gt; 145</span>     delta, clipped_shares, stats, errors <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compute_delta</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">initial_delta</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">iteration</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">fp_type</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">shares_bounds</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    146</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> stats<span style="color: rgb(98,98,98)">.</span>converged:
+<span class="ansi-green-intense-fg ansi-bold">    147</span>         errors<span style="color: rgb(98,98,98)">.</span>append(exceptions<span style="color: rgb(98,98,98)">.</span>DeltaConvergenceError())
+
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/markets/market.py:568</span>, in <span class="ansi-cyan-fg">Market.compute_delta</span><span class="ansi-blue-fg">(self, initial_delta, iteration, fp_type, shares_bounds)</span>
+<span class="ansi-green-intense-fg ansi-bold">    565</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> x, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>, jacobian
+<span class="ansi-green-intense-fg ansi-bold">    567</span>     <span style="color: rgb(95,135,135)"># solve the linear fixed point problem</span>
+<span class="ansi-green-fg">--&gt; 568</span>     delta, stats <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">iteration</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_iterate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">initial_delta</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">contraction</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    569</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-intense-fg ansi-bold">    570</span>     <span style="color: rgb(95,135,135)"># solve for delta with a nonlinear fixed point</span>
+<span class="ansi-green-intense-fg ansi-bold">    571</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">assert</span> <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">nonlinear</span><span style="color: rgb(175,0,0)">'</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> fp_type <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>epsilon_scale <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">1</span>
+
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/configurations/iteration.py:284</span>, in <span class="ansi-cyan-fg">Iteration._iterate</span><span class="ansi-blue-fg">(self, initial, contraction)</span>
+<span class="ansi-green-intense-fg ansi-bold">    281</span> raw_initial <span style="color: rgb(98,98,98)">=</span> initial<span style="color: rgb(98,98,98)">.</span>astype(np<span style="color: rgb(98,98,98)">.</span>float64, copy<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>)<span style="color: rgb(98,98,98)">.</span>flatten()
+<span class="ansi-green-intense-fg ansi-bold">    283</span> <span style="color: rgb(95,135,135)"># solve the problem and convert the raw final values to the same data type and shape as the initial values</span>
+<span class="ansi-green-fg">--&gt; 284</span> raw_final, converged <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_iterator</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    285</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">raw_initial</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">contraction_wrapper</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">iteration_callback</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_method_options</span>
+<span class="ansi-green-intense-fg ansi-bold">    286</span> <span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    287</span> final <span style="color: rgb(98,98,98)">=</span> np<span style="color: rgb(98,98,98)">.</span>asarray(raw_final)<span style="color: rgb(98,98,98)">.</span>astype(initial<span style="color: rgb(98,98,98)">.</span>dtype, copy<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>)<span style="color: rgb(98,98,98)">.</span>reshape(initial<span style="color: rgb(98,98,98)">.</span>shape)
+<span class="ansi-green-intense-fg ansi-bold">    288</span> stats <span style="color: rgb(98,98,98)">=</span> SolverStats(converged, iterations, evaluations)
+
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/configurations/iteration.py:442</span>, in <span class="ansi-cyan-fg">squarem_iterator</span><span class="ansi-blue-fg">(initial, contraction, iteration_callback, max_evaluations, atol, rtol, norm, scheme, step_min, step_max, step_factor)</span>
+<span class="ansi-green-intense-fg ansi-bold">    440</span> <span style="color: rgb(95,135,135)"># acceleration step</span>
+<span class="ansi-green-intense-fg ansi-bold">    441</span> x2, x <span style="color: rgb(98,98,98)">=</span> x, x0 <span style="color: rgb(98,98,98)">-</span> <span style="color: rgb(98,98,98)">2</span> <span style="color: rgb(98,98,98)">*</span> alpha <span style="color: rgb(98,98,98)">*</span> r <span style="color: rgb(98,98,98)">+</span> alpha<span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">2</span> <span style="color: rgb(98,98,98)">*</span> v
+<span class="ansi-green-fg">--&gt; 442</span> x3, (x, weights) <span style="color: rgb(98,98,98)">=</span> x, <span class="ansi-yellow-bg">contraction</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">x</span><span class="ansi-yellow-bg">)</span>[:<span style="color: rgb(98,98,98)">2</span>]
+<span class="ansi-green-intense-fg ansi-bold">    443</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> all_finite(x, weights):
+<span class="ansi-green-intense-fg ansi-bold">    444</span>     x <span style="color: rgb(98,98,98)">=</span> x2
+
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/configurations/iteration.py:273</span>, in <span class="ansi-cyan-fg">Iteration._iterate.&lt;locals&gt;.contraction_wrapper</span><span class="ansi-blue-fg">(raw_values)</span>
+<span class="ansi-green-intense-fg ansi-bold">    271</span>     raw_values <span style="color: rgb(98,98,98)">=</span> np<span style="color: rgb(98,98,98)">.</span>asarray(raw_values)
+<span class="ansi-green-intense-fg ansi-bold">    272</span> values <span style="color: rgb(98,98,98)">=</span> raw_values<span style="color: rgb(98,98,98)">.</span>reshape(initial<span style="color: rgb(98,98,98)">.</span>shape)<span style="color: rgb(98,98,98)">.</span>astype(initial<span style="color: rgb(98,98,98)">.</span>dtype, copy<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>)
+<span class="ansi-green-fg">--&gt; 273</span> values, weights, jacobian <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">contraction</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">values</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">iterations</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">evaluations</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    274</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> (
+<span class="ansi-green-intense-fg ansi-bold">    275</span>     values<span style="color: rgb(98,98,98)">.</span>astype(raw_values<span style="color: rgb(98,98,98)">.</span>dtype, copy<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>)<span style="color: rgb(98,98,98)">.</span>reshape(raw_values<span style="color: rgb(98,98,98)">.</span>shape),
+<span class="ansi-green-intense-fg ansi-bold">    276</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> weights <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span> weights<span style="color: rgb(98,98,98)">.</span>astype(raw_values<span style="color: rgb(98,98,98)">.</span>dtype, copy<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>)<span style="color: rgb(98,98,98)">.</span>reshape(raw_values<span style="color: rgb(98,98,98)">.</span>shape),
+<span class="ansi-green-intense-fg ansi-bold">    277</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> jacobian <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span> jacobian<span style="color: rgb(98,98,98)">.</span>astype(raw_values<span style="color: rgb(98,98,98)">.</span>dtype, copy<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>)
+<span class="ansi-green-intense-fg ansi-bold">    278</span> )
+
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/markets/market.py:540</span>, in <span class="ansi-cyan-fg">Market.compute_delta.&lt;locals&gt;.contraction</span><span class="ansi-blue-fg">(x, iterations, evaluations)</span>
+<span class="ansi-green-intense-fg ansi-bold">    538</span> probabilities <span style="color: rgb(98,98,98)">=</span> compute_probabilities(x)[<span style="color: rgb(98,98,98)">0</span>]
+<span class="ansi-green-intense-fg ansi-bold">    539</span> shares <span style="color: rgb(98,98,98)">=</span> probabilities <span style="color: rgb(98,98,98)">@</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>agents<span style="color: rgb(98,98,98)">.</span>weights
+<span class="ansi-green-fg">--&gt; 540</span> <span class="ansi-yellow-bg">clip_shares</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">shares</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    541</span> x0, x <span style="color: rgb(98,98,98)">=</span> x, x <span style="color: rgb(98,98,98)">+</span> log_shares <span style="color: rgb(98,98,98)">-</span> np<span style="color: rgb(98,98,98)">.</span>log(shares)
+<span class="ansi-green-intense-fg ansi-bold">    542</span> universal_display(x0, x, iterations, evaluations)
+
+File <span class="ansi-green-fg">~/anaconda3/envs/blp_python/lib/python3.12/site-packages/pyblp/markets/market.py:521</span>, in <span class="ansi-cyan-fg">Market.compute_delta.&lt;locals&gt;.clip_shares</span><span class="ansi-blue-fg">(shares)</span>
+<span class="ansi-green-intense-fg ansi-bold">    518</span>         clipped_shares <span style="color: rgb(98,98,98)">=</span> small_shares <span style="color: rgb(98,98,98)">|</span> large_shares
+<span class="ansi-green-intense-fg ansi-bold">    520</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> np<span style="color: rgb(98,98,98)">.</span>isfinite(shares_bounds[<span style="color: rgb(98,98,98)">0</span>]):
+<span class="ansi-green-fg">--&gt; 521</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">clip_shares</span>(shares: Array) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    522</span> <span style="color: rgb(188,188,188)">        </span><span style="color: rgb(175,0,0)">"""Clip shares from below."""</span>
+<span class="ansi-green-intense-fg ansi-bold">    523</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">nonlocal</span> clipped_shares
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
 </div>
 </div>
 </div>
@@ -9410,47 +9573,7 @@ Finished after 00:00:00.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="4">
-<li>Let's assume, only for this question, that you had \micro moments" as in Berry, Levinsohn, and Pakes (2004): the covariance of consumer attributes and product characteristics as well as the covariance between first- and second-choice characteristics. How could you integrate them into your estimation procedure to improve the precision of your estimates? Which of the coeffcients would each of the different sets of moments be particularly useful in "pinning down"?</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="5">
-<li>Suppose in addition that each product has the following marginal cost structure: $$mc_j = \begin{bmatrix} x_j &amp; cs_j \end{bmatrix}' \gamma + \omega_j$$ where cs is the J x 2 matrix of cost shifters.</li>
-</ol>
-<p>5.a. Explain how you can estimate based on your estimates for the demand side and different assumptions on the supply side (product-level profft maximization, firm-level profit maximization, collusion to maximize total profit). How could you obtain valid standard errors?</p>
+<p><strong>Uma possibilidade seria estimar uma variável $\gamma$ que captura como a renda afeta a distribuição de $\alpha_i$ dos consumidores em cada mercado, ou seja, a sensibilidade dos consumidores ao preço. $$\alpha_i= \alpha + \gamma Renda + \varepsilon$$</strong></p>
 </div>
 </div>
 </div>
